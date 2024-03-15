@@ -71,14 +71,14 @@ const {developmentChains} = require("../../helper-hardhat-config");
             transactionResponse.wait(1);
         })
         it("Updates the record.." , async function(){
-            let updateResponse = await authenticate.UpdateCertificate(cert_no,updatedHash,fathernm,rollnm,schoolcd,percentage);
+            let updateResponse = await authenticate.UpdateCertificate(cert_no,updatedHash,fathernm,rollnm,schoolcd);
             await updateResponse.wait(1);
             let detailsResponse = await authenticate.get_details(cert_no);
             let details = detailsResponse.toArray();
             assert.equal(details[0] , updatedHash);
         })
         it("Update Reverts if certificate doesn't exist", async function(){
-            await expect(authenticate.UpdateCertificate(0,updatedHash,fathernm,rollnm,schoolcd,percentage)).to.be.revertedWith("Certificate does not exist");
+            await expect(authenticate.UpdateCertificate(0,updatedHash,fathernm,rollnm,schoolcd)).to.be.revertedWith("Certificate does not exist");
         })
     })
 })
