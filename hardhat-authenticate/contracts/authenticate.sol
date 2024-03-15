@@ -67,7 +67,7 @@ contract Certificate_Authentication {
     }
 
 
-    function UpdateCertificate (uint256 _certNo , bytes32 _name , bytes32 _fatherNm , bytes32 _rollNo , bytes32 _schoolCode , bytes32 _percentage) public {
+    function UpdateCertificate (uint256 _certNo , bytes32 _name , bytes32 _fatherNm , bytes32 _rollNo , bytes32 _schoolCode ) public {
         if(isCertificateExist(_certNo)==false){
             revert("Certificate does not exist");
         }
@@ -75,7 +75,6 @@ contract Certificate_Authentication {
         mp[_certNo][1] == _fatherNm;
         mp[_certNo][2] == _rollNo;
         mp[_certNo][3] == _schoolCode;
-        mp[_certNo][4] == _percentage;
 
         uint256 latest_update = block.timestamp;
         lastUpdate[_certNo]=latest_update;
