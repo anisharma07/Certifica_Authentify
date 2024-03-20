@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Certificate Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"], input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .connect-btn {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .connect-btn button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .connect-btn button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="connect-btn" >
+        <button id="connectMetamask">Connect</button>
+    </div>
+    <div class="container">
+        <form id="myForm" action="/add" method="post">
+
+            <label for="mail">GMail:</label>
+            <input type="email" id="mail" name="mail" required>            
+
+            <label for="certificateNumber">Certificate Number:</label>
+            <input type="text" id="certificateNumber" name="certificateNumber" required>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+
+            <label for="rollNumber">Roll Number:</label>
+            <input type="text" id="rollNumber" name="rollNumber" required>
+
+            <label for="schoolCode">School Code:</label>
+            <input type="text" id="schoolCode" name="schoolCode" required>
+
+            <label for="percentage">Percentage:</label>
+            <input type="number" id="percentage" name="percentage" min="0" max="100" step="0.01" required>
+
+        </form>
+        <div class="connect-btn" >
+            <button id="addCertificate">Submit</button>
+        </div>
+    </div>
+</body>
+<script src="./front_end_integrate_add.js" type="module"></script>
+</html>

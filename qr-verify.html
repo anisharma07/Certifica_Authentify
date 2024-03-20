@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .section {
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1.5px solid #b2b2b2;
+            border-radius: 0.25em;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
+            margin-bottom: 20px;
+        }
+        #my-qr-reader {
+            padding: 20px;
+            border: 1.5px solid #b2b2b2;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #certificateNumber {
+            width: calc(100% - 22px);
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        #qr-verify {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #qr-verify:hover {
+            background-color: #0056b3;
+        }
+        .form-group {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Scan QR Codes</h1>
+    <div class="section">
+        <div id="my-qr-reader">
+            <!-- QR Code Scanner will be rendered here -->
+        </div>
+    </div>
+    <form id="qrverifyForm" action="/qr-verify" method="post">
+        <div class="form-group">
+            <label for="certificateNumber">Certificate Number:</label>
+            <input type="text" id="certificateNumber" name="certificateNumber" required>
+        </div>
+        <div class="form-button">
+            <button id="qr-verify">Verify</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script src="./front_end_integrate_qr-verify.js" type="module"></script>
+</body>
+</html>
