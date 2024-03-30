@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+    }
+    .container {
+        width: 400px;
+        margin: 100px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    input[type="text"],
+    input[type="password"],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="password"]:focus,
+    select:focus {
+        outline: none;
+        border-color: #4CAF50;
+    }
+    select {
+        cursor: pointer;
+    }
+    .secret-key {
+        display: none;
+    }
+    button[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Sign Up</h2>
+    <form id="signup-form" action="/signup" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="accountType">Account Type:</label>
+            <select id="accountType" name="accountType" onchange="toggleSecretKey()">
+                <option value="issuer" >Issuer</option>
+                <option value="user">User</option>
+            </select>
+        </div>
+        <div class="form-group secretKey" id="secretKeyField">
+            <label for="secretKey">Secret Key:</label>
+            <input type="password" id="secretKey" name="secretKey">
+        </div>
+        <div class="form-group">
+            <button type="submit">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+<script>
+function toggleSecretKey() {
+    var accountType = document.getElementById('accountType').value;
+    var secretKeyField = document.getElementById('secretKeyField');
+    if (accountType === 'issuer') {
+        secretKeyField.style.display = 'block';
+    } else {
+        secretKeyField.style.display = 'none';
+    }
+}
+</script>
+</body>
+</html>

@@ -23,6 +23,12 @@ const certSchema = new mongoose.Schema({             // MONGOOSE SCHEMA
     percentage : String
   });
 
+  const userSchema = new mongoose.Schema({
+    username : String,
+    password : String,
+    type : String
+  })
+
 
   // HASHING UTF-8 STRING
   function hash(message){
@@ -84,7 +90,7 @@ const certSchema = new mongoose.Schema({             // MONGOOSE SCHEMA
 }
 
 
-
+const Secret = '123';
 
 
   //MAIN FUNCTION
@@ -92,10 +98,58 @@ async function main(){
 await mongoose.connect("mongodb://127.0.0.1:27017/cert_record")
 
   const newCerti = mongoose.model('newCerti' , certSchema );
+  const newUser = mongoose.model('newUser' , userSchema);
 
-    app.get('/' , (req,res)=>{
-      res.sendFile(path.join(__dirname, 'home.html'));
+
+  app.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname , 'landing.html'));
+  })
+
+    app.post('/signup' ,async (req,res)=>{
+      let User;
+      const unique_check = await newUser.findOne({username : req.body.username}).exec();
+      if(unique_check){
+        res.sendFile(path.join(__dirname,'unique_username.html'));
+        return;
+      }
+      if(req.body.accountType == 'user'){
+         User = new newUser({username : req.body.username , password : req.body.password , type : 'user'});
+      }
+      else{
+        if(req.body.secretKey == Secret){
+           User = new newUser({username : req.body.username , password : req.body.password , type : 'issuer'});
+        }
+        else{
+          res.sendFile(path.join(__dirname , 'invalid_key.html'));
+          return;
+        }
+      }
+      await User.save();
+      res.sendFile(path.join(__dirname, 'succ_signup.html'));
     })
+
+    app.get('/signup' , (req,res)=>{
+      res.sendFile(path.join(__dirname, 'sign_up.html'));
+    })
+
+    app.get('/login' , (req,res)=>{
+      res.sendFile(path.join(__dirname , 'login.html'));
+    })
+
+    app.post('/login' ,async (req,res)=>{
+       const User = await newUser.findOne({username : req.body.username}).exec();
+       if(User && req.body.password === User.password){
+        if(User.type === 'issuer'){
+          res.sendFile(path.join(__dirname,'home.html'));
+        }
+        else if(User.type === 'user'){
+          res.sendFile(path.join(__dirname , 'user_landing.html'));
+        }
+       }
+       else{
+        res.sendFile(path.join(__dirname,'login_fail.html'));
+       }
+    }) 
 
     app.get('/add',(req,res)=>{
       res.sendFile(path.join(__dirname , 'frontend_integrate_add.html'))
