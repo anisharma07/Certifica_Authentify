@@ -7,29 +7,13 @@ const express = require("express");                            // required modul
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require('path');
+const { certSchema, userSchema } = require('./schema');
 
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
-
-const certSchema = new mongoose.Schema({             // MONGOOSE SCHEMA
-    _id : String,
-    mail : String,
-    name : String,
-    fathernm : String,
-    rollnm : String,
-    schoolcd : String,
-    percentage : String
-  });
-
-  const userSchema = new mongoose.Schema({
-    username : String,
-    password : String,
-    type : String
-  })
-
 
   // HASHING UTF-8 STRING
   function hash(message){
