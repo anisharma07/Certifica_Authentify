@@ -14,5 +14,8 @@
   },
   "scripts": {
     "start": "nodemon backend_integrate.js"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
   }
 }

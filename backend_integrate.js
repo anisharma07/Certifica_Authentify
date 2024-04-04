@@ -1,3 +1,4 @@
+require('dotenv').config();
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const { createCanvas, Image } = require('canvas');
@@ -89,11 +90,9 @@ const certSchema = new mongoose.Schema({             // MONGOOSE SCHEMA
     img.src = qrCodeData;
 }
 
-
-const Secret = '123';
-
-
-  //MAIN FUNCTION
+const Secret = process.env.SECRET_KEY;
+console.log(Secret);
+//MAIN FUNCTION
 async function main(){
 await mongoose.connect("mongodb://127.0.0.1:27017/cert_record")
 
