@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Carter+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.carter-one-regular {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+.abeezee-regular {
+  font-family: "ABeeZee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#navbar {
+  /* font-family: "ABeeZee", sans-serif; */
+  /* background-color:blue; */
+  padding: 5px;
+  display: flex;
+}
+#image {
+  height: 80px;
+  width: 200px;
+}
+#action {
+  display: flex;
+  /* background-color: azure; */
+  margin-left: 100vh;
+  padding: 7px;
+}
+#action h3 {
+  color: brown;
+  align-items: end;
+  margin-inline: 35px;
+}
+#landing-home {
+  background-color: #f5f5f5;
+}
+#action a {
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-left: 5px;
+  font-weight: 700;
+  /* display: inline-block; */
+}
+#portion {
+  width: 50%;
+  margin: 5vh;
+}
+#portion h1 {
+  padding: 2px;
+  font-weight: 900;
+  font-size: 45px;
+}
+#png {
+  position: absolute;
+  bottom: 122px;
+  right: 169px;
+}
+#mobile {
+  /* position: relative; */
+  width: 500px;
+}
+#hand {
+  position: relative;
+  top: -4px;
+  right: 465px;
+  width: 201px;
+}
+#land {
+  position: absolute;
+  /* top: 10px; */
+  bottom: -1.5%;
+  right: 0;
+  z-index: -1;
+}
+#lock {
+  position: absolute;
+  bottom: 230px;
+  right: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+#lock button {
+  /* margin-left: 33%;*/
+  height: 30px;
+  width: 120px;
+  font-weight: 700;
+  font-size: larger;
+  color: #5d80ff;
+  border-radius: 5px;
+  border-width: 3px;
+  border-color: pink;
+}
+#lock img {
+  width: 75%;
+  height: 100%;
+}
