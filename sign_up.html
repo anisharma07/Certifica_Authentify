@@ -78,7 +78,7 @@
         width="450px"
         alt="certificate-bg"
       />
-      <form class="form">
+      <form class="form" id="signup-form" action="/signup" method="post">
         <div style="padding-left: 40px; align-self: start;">
           <h2>Welcome to</h2>
           <h1>Certificate Authentication</h1>
@@ -97,6 +97,10 @@
                 class="inputField"
                 type="text"
                 placeholder="Enter your username"
+                type="text"
+                id="username"
+                name="username"
+                required
               />
             </div>
           </div>
@@ -105,6 +109,7 @@
             <label>Password </label>
             <div class="textBoxImageContainer">
               <img
+                id="showPasswordImage"
                 src="/images/login-register/passwordKey.png"
                 alt="password"
                 class="input-image"
@@ -114,12 +119,16 @@
                 class="inputField"
                 type="password"
                 placeholder="Enter your password"
+                id="password"
+                name="password"
+                required
               />
               <img
                 src="/images/login-register/showPassword.png"
                 alt="password"
                 class="input-image-show-password"
-                style="padding-right: 40px;"
+                style="padding-right: 40px; cursor: pointer;"
+                onclick="togglePassword()"
               />
             </div>
           </div>
@@ -133,14 +142,19 @@
                 class="input-image"
                 style="padding-left: 4px;"
               />
-              <select class="accountType">
-                <option>Admin user</option>
-                <option>Normal user</option>
+              <select
+                class="accountType"
+                id="accountType"
+                name="accountType"
+                onchange="toggleSecretKey()"
+              >
+                <option value="admin">Admin user</option>
+                <option value="user">Normal user</option>
               </select>
             </div>
           </div>
 
-          <div class="inputBoxFull">
+          <div class="inputBoxFull" id="secretKeyField">
             <label>Passkey </label>
             <div class="textBoxImageContainer">
               <img
@@ -151,20 +165,20 @@
               />
               <input
                 class="inputField"
-                type="password"
                 placeholder="Enter your passkey"
+                type="password"
+                id="secretKey"
+                name="secretKey"
               />
             </div>
           </div>
         </div>
 
         <div class="loginFooter">
-          <button class="loginButton">Sign up</button>
+          <button class="loginButton" type="submit">Sign up</button>
           <p>
-            Dont have an account?
-            <a href="https://github.com/Rudransh-Singh-Athwal" target="blank">
-              Sign up
-            </a>
+            Already have an account?
+            <a href="/login"> Login </a>
           </p>
         </div>
       </form>
@@ -198,15 +212,26 @@
 </div> -->
 
     <script>
-      function toggleSecretKey() {
-          var accountType = document.getElementById('accountType').value;
-          var secretKeyField = document.getElementById('secretKeyField');
-          if (accountType === 'issuer') {
-              secretKeyField.style.display = 'block';
-          } else {
-              secretKeyField.style.display = 'none';
-          }
-      }
+            function toggleSecretKey() {
+                var accountType = document.getElementById('accountType').value;
+                var secretKeyField = document.getElementById('secretKeyField');
+                if (accountType === 'admin') {
+                    secretKeyField.style.display = 'block';
+                } else {
+                    secretKeyField.style.display = 'none';
+                }
+            }
+            toggleSecretKey();
+
+          function togglePassword(){
+                console.log("yes")
+        const passwordField = document.getElementById("password");
+        if (passwordField.type === 'password') {
+          passwordField.type = 'text';
+        } else {
+          passwordField.type = 'password';
+        }
+      };
     </script>
   </body>
 </html>

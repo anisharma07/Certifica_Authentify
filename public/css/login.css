@@ -111,7 +111,12 @@ input::placeholder {
   align-content: center;
   justify-content: center;
 }
-
+input:focus {
+  outline: none;
+}
+select:focus {
+  outline: none;
+}
 label {
   padding-left: 3rem;
   font-size: small;
