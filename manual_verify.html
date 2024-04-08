@@ -4,67 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Certificate Form</title>
-    <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-      }
-      .container {
-          max-width: 400px;
-          margin: 50px auto;
-          padding: 20px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-          background-color: #f9f9f9;
-      }
-      label {
-          display: block;
-          margin-bottom: 10px;
-      }
-      input[type="text"], input[type="number"] {
-          width: 100%;
-          padding: 8px;
-          margin-bottom: 15px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-      }
-      input[type="submit"] {
-          background-color: #4CAF50;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-      }
-      input[type="submit"]:hover {
-          background-color: #45a049;
-      }
-      .connect-btn {
-          text-align: center;
-          margin-bottom: 20px;
-      }
-      .connect-btn button {
-          background-color: #007bff;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-      }
-      .connect-btn button:hover {
-          background-color: #0056b3;
-      }
-      h1 {
-          margin-left: 600px;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/manual-verify.css" />
   </head>
   <body>
     <div class="nav">
       <div id="img">
-        <img src="logo.png" alt="" />
+        <img src="/images/manual/logo.png" alt="" />
       </div>
       <div id="line">
         <br />
@@ -76,61 +21,82 @@
         <h3>GENERATE QR</h3>
       </div>
 
-      <button class="button">
+      <!-- <button class="button">
         <span>Connect wallet</span>
-        <img src="fox.png" alt="Fox Image" />
-      </button>
+        <img src="/images/manual/fox.png" alt="Fox Image" />
+      </button> -->
     </div>
-
+    <div class="connect-btn">
+      <button id="connectMetamask">Connect</button>
+    </div>
     <button id="button">
-      <img src="arrow.png" alt="" />
+      <img src="/images/manual/arrow.png" alt="" />
       <span>back</span>
     </button>
 
     <div class="main">
       <h1>Fill out your certificate details to verify</h1>
-      <form action="">
+      <form id="verify" action="/verify" method="post">
         <div id="side">
           <input
-            type="number"
-            name=""
-            id="cnumber"
-            placeholder="Certificate Nmuber:  "
+            placeholder="Certificate Nmuber:"
+            type="text"
+            id="certificateNumber"
+            name="certificateNumber"
+            required
           />
-          <input type="number" name="" id="scode" placeholder="school code:" />
+          <input
+            placeholder="school code:"
+            type="text"
+            id="schoolCode"
+            name="schoolCode"
+            required
+          />
         </div>
         <div id="other">
-          <input type="text" name="" id="name" placeholder="Name:" /><br />
           <input
             type="text"
-            name=""
-            id="fname"
+            id="name"
+            placeholder="Name:"
+            name="name"
+            required
+          /><br />
+          <input
             placeholder="father name:"
+            type="text"
+            id="fatherName"
+            name="fatherName"
+            required
           /><br />
           <input
-            type="number"
-            name=""
-            id="rollno"
             placeholder="Roll No: "
+            type="text"
+            id="rollNumber"
+            name="rollNumber"
+            required
           /><br />
           <input
             type="number"
-            name=""
-            id="percent"
             placeholder="Percentage :"
+            type="number"
+            id="percentage"
+            name="percentage"
+            min="0"
+            max="100"
+            step="0.01"
+            required
           /><br />
         </div>
-
-        <input type="submit" id="submit" />
       </form>
+      <div class="connect-btn">
+        <button id="verifyCertificate">Verify</button>
+      </div>
     </div>
-    <img src="Vector.png" id="neeche" />
-    <img src="Vector 2.png" id="neeche2" />
+    <img src="/images/manual/Vector.png" id="neeche" />
+    <img src="/images/manual/Vector 2.png" id="neeche2" />
 
     <!-- <h1>Manual Verification </h1>
-    <div class="connect-btn" >
-        <button id="connectMetamask">Connect</button>
-    </div>
+    
     <div class="container">
         <form id="verify" action="/verify" method="post">
             <label for="certificateNumber">Certificate Number:</label>
