@@ -1,47 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certificate Management</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f0f0f0;
-    }
-    .container {
-        max-width: 400px;
-        margin: 50px auto;
-        text-align: center;
-    }
-    .button {
-        display: block;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Management</title>
+    <link rel="stylesheet" href="/css/home-page.css" />
+    <style>
+      body{
         width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    .button:hover {
-        background-color: #0056b3;
-    }
-</style>
-</head>
-<body>
+        height: 100vh;
+        overflow: hidden;
+        background-color: #F7F7F7;
+      }
+      .home-card{
+        background-color: white;
+        border-radius: 36px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <div id="img">
+        <img src="/images/home/logo.png" alt="" width="200px" />
+      </div>
+      <div id="line">
+        <br />
+      </div>
+      <div id="text">
+        <a href="/">HOME</a>
+        <a href="/about">ABOUT</a>
+        <a href="/generate" class="button" id="gen">Generate QR</a>
+        <a href="/verify" class="button" id="man">Manual Verification</a>
+        <a href="/qr-verify" class="button" id="qr">QR Code Verification</a>
+      </div>
+      <div id="profile">
+        <img src="/images/home/profile.png" id="icon" />
+        <h3>PROFILE</h3>
+      </div>
+    </div>
+    <div id="m">
+      <h2>Hello User,select your services :</h2>
+    </div>
+    <div id="line2"><br /></div>
 
-<div class="container">
+    <div id="box">
+      <div id="box1" class="home-card">
+        <img src="/images/home/qr.png" id="qr" />
+        <p>Generate QR code for <br />your certificate</p>
+        <a href="/generate" class="button" id="gen">Generate</a>
+      </div>
+      <div id="box2" class="home-card">
+        <img src="/images/home/tick.png" id="tick" />
+        <p>
+          Manual Verification Using <br />
+          Certificate Details
+        </p>
+        <a href="/verify" class="button" id="man">Verify</a>
+      </div>
+      <div id="box3" class="home-card">
+        <img src="/images/home/scan.png" id="scan" />
+        <p>
+          Certificate Verification <br />
+          Using Qr code scan
+        </p>
+        <a href="/qr-verify" class="button" id="qr">Verify</a>
+      </div>
+    </div>
+    <div class="neeche">
+      <img src="/images/home/Vector.png" />
+    </div>
+    <!-- <div class="container">
     <h1>Welcome User</h1>
     <a href="/generate" class="button" id="gen">Generate QR</a>
     <a href="/verify" class="button" id="man">Manual Verification</a>
     <a href="/qr-verify" class="button" id="qr">QR Code Verification</a>
-</div>
-
-</body>
+</div> -->
+  </body>
 </html>

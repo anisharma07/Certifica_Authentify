@@ -1,97 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Certificate Form</title>
+    <link rel="stylesheet" href="/css/addnew.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"], input[type="number"], input[type="email"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        .connect-btn {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .connect-btn button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .connect-btn button:hover {
-            background-color: #0056b3;
-        }
+      .connect-btn button {
+             background-color: #007bff;
+             color: white;
+             padding: 10px 20px;
+             border: none;
+             border-radius: 5px;
+             cursor: pointer;
+             margin-top: 50px;
+      }
     </style>
-</head>
-<body>
-    <div class="connect-btn" >
+  </head>
+  <body>
+    <div class="nav">
+      <div id="img">
+        <img src="/images/add/logo.png" alt="" />
+      </div>
+      <div id="line">
+        <br />
+      </div>
+      <div class="text">
+        <a href="/">HOME</a>
+        <a href="/about">ABOUT</a>
+        <a href="/generate" id="gen">Generate QR</a>
+        <a href="/verify" id="man">Manual Verification</a>
+        <a href="/qr-verify" id="qr">QR Code Verification</a>
+      </div>
+
+      <div class="connect-btn">
+        <button id="connectMetamask">
+          Connect <img src="/images/add/fox.png" alt="Fox Image" />
+        </button>
+      </div>
+    </div>
+
+    <button id="button">
+      <img src="/images/add/arrow.png" alt="" />
+      <span>back</span>
+    </button>
+
+    <div class="main">
+      <h1>Fill the Details below to Add New Certificate</h1>
+      <div id="div">
+        <div id="div1">
+          <form id="myForm" action="/add" method="post">
+            <input
+              type="email"
+              id="mail"
+              name="mail"
+              placeholder="Email"
+              required
+            />
+            <input
+              type="text"
+              id="certificateNumber"
+              placeholder="Certificate Number"
+              name="certificateNumber"
+              required
+            />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <input
+              type="text"
+              id="fatherName"
+              name="fatherName"
+              placeholder="Father's Name"
+              required
+            />
+            <input
+              type="text"
+              id="rollNumber"
+              name="rollNumber"
+              placeholder="Roll Number"
+              required
+            />
+            <input
+              type="text"
+              id="schoolCode"
+              name="schoolCode"
+              placeholder="School Code"
+              required
+            />
+            <input
+              type="number"
+              id="percentage"
+              name="percentage"
+              min="0"
+              max="100"
+              step="0.01"
+              placeholder="Percentage"
+              required
+            />
+          </form>
+          <div class="connect-btn">
+            <button id="addCertificate">Add Certificate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <img src="/images/add/Vector.png" id="neeche" />
+    <!-- <div class="connect-btn" >
         <button id="connectMetamask">Connect</button>
     </div>
     <div class="container">
         <form id="myForm" action="/add" method="post">
-
-            <label for="mail">GMail:</label>
-            <input type="email" id="mail" name="mail" required>            
-
-            <label for="certificateNumber">Certificate Number:</label>
-            <input type="text" id="certificateNumber" name="certificateNumber" required>
-
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="fatherName">Father's Name:</label>
-            <input type="text" id="fatherName" name="fatherName" required>
-
-            <label for="rollNumber">Roll Number:</label>
-            <input type="text" id="rollNumber" name="rollNumber" required>
-
-            <label for="schoolCode">School Code:</label>
-            <input type="text" id="schoolCode" name="schoolCode" required>
-
-            <label for="percentage">Percentage:</label>
-            <input type="number" id="percentage" name="percentage" min="0" max="100" step="0.01" required>
-
+            
         </form>
         <div class="connect-btn" >
             <button id="addCertificate">Submit</button>
         </div>
-    </div>
-</body>
-<script src="./front_end_integrate_add.js" type="module"></script>
+    </div> -->
+  </body>
+  <script src="./front_end_integrate_add.js" type="module"></script>
 </html>

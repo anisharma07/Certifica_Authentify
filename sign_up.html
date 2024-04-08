@@ -1,77 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sign Up</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f7f7f7;
-    }
-    .container {
-        width: 400px;
-        margin: 100px auto;
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    h2 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 30px;
-    }
-    .form-group {
-        margin-bottom: 20px;
-    }
-    label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-        color: #555;
-    }
-    input[type="text"],
-    input[type="password"],
-    select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        transition: border-color 0.3s ease;
-    }
-    input[type="text"]:focus,
-    input[type="password"]:focus,
-    select:focus {
-        outline: none;
-        border-color: #4CAF50;
-    }
-    select {
-        cursor: pointer;
-    }
-    .secret-key {
-        display: none;
-    }
-    button[type="submit"] {
-        background-color: #4CAF50;
-        color: #fff;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 100%;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-    }
-    button[type="submit"]:hover {
-        background-color: #45a049;
-    }
-</style>
-</head>
-<body>
-<div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/login.css" />
+    <!-- <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f7f7f7;
+      }
+      .container {
+          width: 400px;
+          margin: 100px auto;
+          background-color: #fff;
+          padding: 30px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+          text-align: center;
+          color: #333;
+          margin-bottom: 30px;
+      }
+      .form-group {
+          margin-bottom: 20px;
+      }
+      label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+          color: #555;
+      }
+      input[type="text"],
+      input[type="password"],
+      select {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          transition: border-color 0.3s ease;
+      }
+      input[type="text"]:focus,
+      input[type="password"]:focus,
+      select:focus {
+          outline: none;
+          border-color: #4CAF50;
+      }
+      select {
+          cursor: pointer;
+      }
+      .secret-key {
+          display: none;
+      }
+      button[type="submit"] {
+          background-color: #4CAF50;
+          color: #fff;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          width: 100%;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+      }
+      button[type="submit"]:hover {
+          background-color: #45a049;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="/images/login-register/image.png"
+        width="450px"
+        alt="certificate-bg"
+      />
+      <form class="form" id="signup-form" action="/signup" method="post">
+        <div style="padding-left: 40px; align-self: start;">
+          <h2>Welcome to</h2>
+          <h1>Certificate Authentication</h1>
+        </div>
+        <div class="inputFieldsContainer">
+          <div class="inputBoxFull">
+            <label>Username </label>
+            <div class="textBoxImageContainer">
+              <img
+                src="/images/login-register/user.png"
+                width="40px"
+                alt="user"
+                class="input-image"
+              />
+              <input
+                class="inputField"
+                type="text"
+                placeholder="Enter your username"
+                type="text"
+                id="username"
+                name="username"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="inputBoxFull">
+            <label>Password </label>
+            <div class="textBoxImageContainer">
+              <img
+                id="showPasswordImage"
+                src="/images/login-register/passwordKey.png"
+                alt="password"
+                class="input-image"
+                style="padding-left: 8px;"
+              />
+              <input
+                class="inputField"
+                type="password"
+                placeholder="Enter your password"
+                id="password"
+                name="password"
+                required
+              />
+              <img
+                src="/images/login-register/showPassword.png"
+                alt="password"
+                class="input-image-show-password"
+                style="padding-right: 40px; cursor: pointer;"
+                onclick="togglePassword()"
+              />
+            </div>
+          </div>
+
+          <div class="inputBoxFull">
+            <label>Account Type </label>
+            <div class="textBoxImageContainer">
+              <img
+                src="/images/login-register/accountType.png"
+                alt="accountType"
+                class="input-image"
+                style="padding-left: 4px;"
+              />
+              <select
+                class="accountType"
+                id="accountType"
+                name="accountType"
+                onchange="toggleSecretKey()"
+              >
+                <option value="admin">Admin user</option>
+                <option value="user">Normal user</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="inputBoxFull" id="secretKeyField">
+            <label>Passkey </label>
+            <div class="textBoxImageContainer">
+              <img
+                src="/images/login-register/passkey.png"
+                alt="password"
+                class="input-image"
+                style="top: 5%;"
+              />
+              <input
+                class="inputField"
+                placeholder="Enter your passkey"
+                type="password"
+                id="secretKey"
+                name="secretKey"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="loginFooter">
+          <button class="loginButton" type="submit">Sign up</button>
+          <p>
+            Already have an account?
+            <a href="/login"> Login </a>
+          </p>
+        </div>
+      </form>
+    </div>
+    <!-- <div class="container">
     <h2>Sign Up</h2>
     <form id="signup-form" action="/signup" method="post">
         <div class="form-group">
@@ -97,18 +209,29 @@
             <button type="submit">Sign Up</button>
         </div>
     </form>
-</div>
+</div> -->
 
-<script>
-function toggleSecretKey() {
-    var accountType = document.getElementById('accountType').value;
-    var secretKeyField = document.getElementById('secretKeyField');
-    if (accountType === 'issuer') {
-        secretKeyField.style.display = 'block';
-    } else {
-        secretKeyField.style.display = 'none';
-    }
-}
-</script>
-</body>
+    <script>
+            function toggleSecretKey() {
+                var accountType = document.getElementById('accountType').value;
+                var secretKeyField = document.getElementById('secretKeyField');
+                if (accountType === 'admin') {
+                    secretKeyField.style.display = 'block';
+                } else {
+                    secretKeyField.style.display = 'none';
+                }
+            }
+            toggleSecretKey();
+
+          function togglePassword(){
+                console.log("yes")
+        const passwordField = document.getElementById("password");
+        if (passwordField.type === 'password') {
+          passwordField.type = 'text';
+        } else {
+          passwordField.type = 'password';
+        }
+      };
+    </script>
+  </body>
 </html>
