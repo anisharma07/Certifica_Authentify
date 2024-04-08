@@ -1,68 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Certificate Form</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"], input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-        .connect-btn {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .connect-btn button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .connect-btn button:hover {
-            background-color: #0056b3;
-        }
-        h1 {
-            margin-left: 600px;
-        }
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      .container {
+          max-width: 400px;
+          margin: 50px auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #f9f9f9;
+      }
+      label {
+          display: block;
+          margin-bottom: 10px;
+      }
+      input[type="text"], input[type="number"] {
+          width: 100%;
+          padding: 8px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+      input[type="submit"] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      input[type="submit"]:hover {
+          background-color: #45a049;
+      }
+      .connect-btn {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      .connect-btn button {
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      .connect-btn button:hover {
+          background-color: #0056b3;
+      }
+      h1 {
+          margin-left: 600px;
+      }
     </style>
-</head>
-<body>
-    <h1>Manual Verification </h1>
+  </head>
+  <body>
+    <div class="nav">
+      <div id="img">
+        <img src="logo.png" alt="" />
+      </div>
+      <div id="line">
+        <br />
+      </div>
+      <div class="text">
+        <h3>HOME</h3>
+        <h3 id="bg">MANUAL VERIFY</h3>
+        <h3>QR VERIFY</h3>
+        <h3>GENERATE QR</h3>
+      </div>
+
+      <button class="button">
+        <span>Connect wallet</span>
+        <img src="fox.png" alt="Fox Image" />
+      </button>
+    </div>
+
+    <button id="button">
+      <img src="arrow.png" alt="" />
+      <span>back</span>
+    </button>
+
+    <div class="main">
+      <h1>Fill out your certificate details to verify</h1>
+      <form action="">
+        <div id="side">
+          <input
+            type="number"
+            name=""
+            id="cnumber"
+            placeholder="Certificate Nmuber:  "
+          />
+          <input type="number" name="" id="scode" placeholder="school code:" />
+        </div>
+        <div id="other">
+          <input type="text" name="" id="name" placeholder="Name:" /><br />
+          <input
+            type="text"
+            name=""
+            id="fname"
+            placeholder="father name:"
+          /><br />
+          <input
+            type="number"
+            name=""
+            id="rollno"
+            placeholder="Roll No: "
+          /><br />
+          <input
+            type="number"
+            name=""
+            id="percent"
+            placeholder="Percentage :"
+          /><br />
+        </div>
+
+        <input type="submit" id="submit" />
+      </form>
+    </div>
+    <img src="Vector.png" id="neeche" />
+    <img src="Vector 2.png" id="neeche2" />
+
+    <!-- <h1>Manual Verification </h1>
     <div class="connect-btn" >
         <button id="connectMetamask">Connect</button>
     </div>
@@ -90,7 +155,7 @@
         <div class="connect-btn" >
             <button id="verifyCertificate">Verify</button>
         </div>
-    </div>
-</body>
-<script src="./front_end_integrate_verify.js" type="module"></script>
+    </div> -->
+  </body>
+  <script src="./front_end_integrate_verify.js" type="module"></script>
 </html>
