@@ -25,6 +25,18 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+a{
+  text-decoration: none;
+}
+body{
+  width: 100%;
+  height: 100vh;
+  background-color: #F7F7F7;
+}
+.home-card{
+  background-color: white;
+  border-radius: 36px;
+}
 .to-do-neeche {
   width: 100%;
   position: relative;
@@ -44,7 +56,6 @@ body {
   right: -29px;
   z-index: -1;
 }
-
 #nav {
   display: flex;
   font-family: "Poppins", sans-serif;
@@ -53,14 +64,14 @@ body {
   /* background-color: black; */
   width: 25%;
   padding: 2px;
-  margin: 2px;
+  margin-top: -10px;
   margin-left: -20px;
 }
 #line {
   width: 1px;
   background-color: black;
   height: 100px;
-  margin-top: 1.75%;
+  margin-top: 1.5%;
 }
 #text {
   font-weight: 100;
@@ -68,12 +79,22 @@ body {
   padding: 50px;
   gap: 0px 40px;
   opacity: 0.6;
+  height: 100px;
+}
+#text a {
+  margin-top: 10px;
+  color: black;
+  text-transform: uppercase;
+  font-size: large;
+  font-weight: 600;
 }
 #profile {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 50px;
   margin-left: 10%;
+  margin-top: -60px;
   gap: 0px 5px;
 }
 #profile h3 {
@@ -86,7 +107,7 @@ body {
   margin-left: 50px;
   color: #5d80ff;
   font-size: xx-large;
-  margin-top: -30px;
+  margin-top: -70px;
   opacity: 0.9;
 }
 
@@ -94,9 +115,9 @@ body {
   /* background-color: aqua; */
   display: flex;
   padding: 20px;
-  gap: 0px 100px;
+  gap: 0px 80px;
   height: 370px;
-  margin-top: -30px;
+  margin: -30px 0px 0px 40px;
 }
 #box1 {
   /* background-color: yellowgreen; */
@@ -113,17 +134,18 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "ABeeZee", sans-serif;
+  background-color: white;
 }
 #qr {
   height: 90px;
-  width: 89px;
+  width: 100px;
   margin-bottom: 20px;
 }
 #box1 p {
   font-size: x-large;
   text-align: center;
 }
-#box1 button {
+.verify-btns{
   font-family: "Poppins", sans-serif;
   font-size: x-large;
   color: white;
@@ -132,6 +154,9 @@ body {
   border-radius: 33px;
   background-color: #5d80ff;
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #box2 {
@@ -149,6 +174,8 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "ABeeZee", sans-serif;
+  background-color: white;
+
 }
 #tick {
   height: 90px;
@@ -185,6 +212,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "ABeeZee", sans-serif;
+  background-color: white;
 }
 #scan {
   height: 90px;
@@ -207,8 +235,8 @@ body {
 }
 
 #line2 {
-  height: 5px;
-  width: 53%;
+  height: 2px;
+  width: 25%;
   margin-left: 50px;
   margin-top: -33px;
   margin-bottom: 40px;
@@ -219,10 +247,10 @@ body {
   display: flex;
   padding: 20px;
   gap: 0px 100px;
-  margin-left: 240px;
+  margin-left: 280px;
   height: 370px;
   margin-top: -30px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 #new1 {
@@ -240,6 +268,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "ABeeZee", sans-serif;
+  background-color: white;
 }
 #g {
   height: 90px;
@@ -276,6 +305,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "ABeeZee", sans-serif;
+  background-color: white;
 }
 #r {
   height: 90px;
