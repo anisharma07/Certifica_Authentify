@@ -1,1 +1,75 @@
-<h1>Certificate Couldn't be Verified->XXXX</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Verification</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .footerBottom {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .certificate {
+        background-color: #f5f5f5;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .certificate h1 {
+        margin-top: 0;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        justify-content: space-between;
+        margin-top: 2rem;
+      }
+
+      .links a {
+        text-decoration: none;
+        margin-bottom: 1rem;
+        color: #007bff;
+        font-weight: bold;
+      }
+      #try {
+        margin-top: auto;
+      }
+
+      footer {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="certificate">
+        <h1>The requested Certificate is not verified</h1>
+      </div>
+      <div class="links">
+        <a href="home.html">Back to Home</a>
+        <a href="verify.html">Verify Again</a>
+      </div>
+    </div>
+    <footer>
+      <h3>Try checking the certificate details for any mistakes</h3>
+    </footer>
+  </body>
+</html>
