@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -67,7 +67,7 @@
       <h1>Scan QR Codes</h1>
       <div class="section">
         <div id="my-qr-reader">
-          <!-- QR Code Scanner will be rendered here -->
+          QR Code Scanner will be rendered here
         </div>
       </div>
       <form id="qrverifyForm" action="/qr-verify" method="post">
@@ -89,4 +89,57 @@
     <script src="https://unpkg.com/html5-qrcode"></script>
     <script src="/front_end_integrate_qr-verify.js" type="module"></script>
   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR code verification</title>
+    <link rel="stylesheet" href="/css/styleQR.css">
+</head>
+<body>
+    <div class="nav">
+        <div id="img">
+            <img src="/images/QR/logo.png" alt="">
+        </div>
+        
+        <div class="text">
+            <h3>HOME</h3>
+            <h3>MANUAL VERIFY</h3>
+            <h3>QR VERIFY</h3> 
+            <h3 id="bg">GENERATE QR</h3>
+        </div>
+    </div>
+
+    <button id="button">
+        <img src="/images/QR/arrow.png" alt="">
+        <span>back</span>
+    </button>
+
+    <div class="container">
+        <h1>Upload and scan the QR code associated with your <br> certificate to verify</h1>
+        <div class="scanner">
+            <img src="/images/QR/qr.png" alt="">
+        </div>
+        <div class="camera">
+            <h3>Select a Camera :</h3>
+            <select id="">
+                <option value="default">Select a camera</option>
+                <option value="camera1">Camera 1</option>
+                <option value="camera2">Camera 2</option>
+                <option value="camera3">Camera 3</option>
+            </select>
+        </div>
+        <div id="button2">
+        <button>Start Scanning</button>
+        <a href="">Drop link manually</a>
+        </div>
+    </div>
+    <button id="verify">VERIFY</button>
+    <img src="/images/QR/Vector.png" id="neeche">
+    <img src="/images/QR/Vector 2.png" id="neeche2">
+    
+</body>
 </html>
