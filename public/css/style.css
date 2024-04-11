@@ -31,6 +31,7 @@ body{
     position: fixed;
     bottom: -120px;
     right: -0px;
+    z-index: -1;
 }
 a{
     text-decoration: none;
