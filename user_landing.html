@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Certificate Management</title>
-    <link rel="stylesheet" href="/css/home-page.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <style>
       body{
         width: 100%;
@@ -21,17 +21,15 @@
   <body>
     <div id="nav">
       <div id="img">
-        <img src="/images/home/logo.png" alt="" width="200px" />
+        <img src="/images/home/logo.png" alt=""/>
       </div>
-      <div id="line">
-        <br />
-      </div>
+      <div id="line"> <br></div>
       <div id="text">
         <a href="/">HOME</a>
         <a href="/about">ABOUT</a>
-        <a href="/generate" class="button" id="gen">Generate QR</a>
-        <a href="/verify" class="button" id="man">Manual Verification</a>
-        <a href="/qr-verify" class="button" id="qr">QR Code Verification</a>
+        <a href="/verify" id="man">Manual verify</a>
+        <a href="/qr-verify"  id="qr">QR verify</a>
+        <a href="/generate"  id="gen">Generate QR</a>
       </div>
       <div id="profile">
         <img src="/images/home/profile.png" id="icon" />
@@ -41,26 +39,26 @@
     <div id="m">
       <h2>Hello User,select your services :</h2>
     </div>
-    <div id="line2"><br /></div>
+    <div id="line2"> <br></div>
 
     <div id="box">
-      <div id="box1" class="home-card">
-        <img src="/images/home/qr.png" id="qr" />
+      <div class="home-card">
+        <img src="/images/home/qr.png" class="QR" />
         <p>Generate QR code for <br />your certificate</p>
         <a href="/generate" class="button" id="gen">Generate</a>
       </div>
-      <div id="box2" class="home-card">
-        <img src="/images/home/tick.png" id="tick" />
+      <div class="home-card">
+        <img src="/images/home/tick.png" class="QR" />
         <p>
-          Manual Verification Using <br />
+          Manual Verification Using <br>
           Certificate Details
         </p>
-        <a href="/verify" class="button" id="man">Verify</a>
+        <a href="/verify" class="button" class="QR">Verify</a>
       </div>
-      <div id="box3" class="home-card">
+      <div class="home-card">
         <img src="/images/home/scan.png" id="scan" />
         <p>
-          Certificate Verification <br />
+          Certificate Verification <br>
           Using Qr code scan
         </p>
         <a href="/qr-verify" class="button" id="qr">Verify</a>

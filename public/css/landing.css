@@ -26,79 +26,125 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+a{
+  text-decoration: none;
+  color: #F4F4F4;
+}
 #navbar {
   /* font-family: "ABeeZee", sans-serif; */
   /* background-color:blue; */
-  padding: 5px;
+  padding: 0px;
   display: flex;
+  height: 120px;
 }
 #image {
   height: 80px;
   width: 200px;
+  margin-top: -15px; 
 }
 #action {
   display: flex;
   /* background-color: azure; */
-  margin-left: 100vh;
-  padding: 7px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50%;
+  margin-top: -0.75%;
+  gap: 0px 30px;
 }
-#action h3 {
-  color: brown;
-  align-items: end;
-  margin-inline: 35px;
-}
+/* 
 #landing-home {
   background-color: #f5f5f5;
-}
+} */
+
 #action a {
   padding: 15px;
   border-radius: 8px;
   text-align: center;
-  margin-left: 5px;
+  margin-left: 10px;
   font-weight: 700;
+  font-size: large;
+  
   /* display: inline-block; */
 }
-#portion {
-  width: 50%;
-  margin: 5vh;
+.action-btns{
+  color: rgba(0, 0, 0, 0.491);
 }
-#portion h1 {
-  padding: 2px;
+
+#gradient{
+  background: linear-gradient(to right, #2615e198, #fe7bef);
+    border: none; 
+    padding: 5px 20p 5px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    color: #F4F4F4;
+  }
+  #gradient:hover {
+    background: linear-gradient(to right, #7bf1fe63, #5fffcac4);
+    color: #474747;
+  } 
+
+#portion {
+  width: 40%;
+  margin: 9vh 0vh 0vh 10vh;
+}
+#text p{
+  font-size: 50px;
+  font-weight: 300;
+  color: #474747;
+}
+#text h1 {
+  font-family: "Poppins", sans-serif;
   font-weight: 900;
-  font-size: 45px;
+  font-size: 80px;
+  margin: -90px 0px -90px -5px;
+  background: linear-gradient(to right, #2615e198, #fe7bef);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#getstarted {
+  font-family: "poppins",sans-serif;
+  font-size: x-large;
+  text-decoration: none;
+  font-size: 30px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #2615e198, #fe7bef);
+  width: 40%;
+  text-align: center;
+  padding: 8px 4px;
 }
 #png {
   position: absolute;
-  bottom: 122px;
-  right: 169px;
+  bottom: 102px;
+  right: 50px;
 }
 #mobile {
   /* position: relative; */
-  width: 500px;
+  width: 550px;
 }
 #hand {
   position: relative;
   top: -4px;
-  right: 465px;
-  width: 201px;
+  right: 490px;
+  width: 222px;
 }
 #land {
   position: absolute;
   /* top: 10px; */
-  bottom: -1.5%;
+  bottom: -3.5%;
   right: 0;
   z-index: -1;
 }
 #lock {
   position: absolute;
-  bottom: 230px;
-  right: 150px;
+  bottom: 240px;
+  right: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
 }
 #lock button {
   /* margin-left: 33%;*/
@@ -108,10 +154,10 @@ body {
   font-size: larger;
   color: #5d80ff;
   border-radius: 5px;
-  border-width: 3px;
+  border-width: 2px;
   border-color: pink;
 }
 #lock img {
-  width: 75%;
+  width: 85%;
   height: 100%;
 }
