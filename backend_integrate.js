@@ -145,7 +145,6 @@ async function main() {
 
   app.post("/add", async (req, res) => {
     console.log(req.body);
-    // console.log(h_Name);
     mail = req.body.mail;
     cert_no = req.body.certificateNumber;
     Name = req.body.name;
