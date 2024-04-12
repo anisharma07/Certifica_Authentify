@@ -24,25 +24,40 @@ a:hover {
   padding: 2px;
   margin: 2px;
   margin-left: -20px;
+  margin-top: -20px;
 }
 #line {
   width: 1px;
   background-color: black;
   height: 100px;
-  margin-top: 1.75%;
+  margin-top: 1.25%;
 }
-#text {
+#text{
   font-weight: 100;
   display: flex;
-  padding: 50px;
+  padding: 40px;
   gap: 0px 70px;
   opacity: 0.6;
+  height: fit-content;
+  width: fit-content;
+}
+#text a {
+  margin-top: 12px;
+  color: black;
+  text-transform: uppercase;
+  font-size: large;
+  font-weight: 600;
+  text-decoration: none;
 }
 #profile {
   display: flex;
   padding: 50px;
-  margin-left: 10%;
+  margin-left: 5%;
   gap: 0px 5px;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  margin-top: -18px;
 }
 #profile h3 {
   opacity: 0.7;
@@ -52,7 +67,7 @@ a:hover {
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
-  gap: 0px 10px;
+  gap: 0px 20px;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
@@ -64,13 +79,13 @@ a:hover {
 }
 .main p {
   text-align: center;
-  font-size: xx-large;
+  font-size: x-large;
   color: #5d80ff;
   font-weight: 750;
 }
 
-#form {
-  font-size: xx-large;
+#qr-form input {
+  font-size: x-large;
   width: 450px;
   background-color: #c6c6c66e;
   border-radius: 5px;
@@ -80,14 +95,17 @@ a:hover {
   margin-top: 15px;
 }
 
-#button {
+#butt {
   background-color: #5d80ff;
   color: white;
   border-radius: 70px;
+  border-width: 0px;
   padding: 15px;
   width: 250px;
   font-weight: 700;
   font-size: x-large;
   margin-top: 30px;
-  margin-left: 24%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
 }
