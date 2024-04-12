@@ -30,6 +30,9 @@ a{
   text-decoration: none;
   color: #F4F4F4;
 }
+a:hover {
+  color: #000000;
+}
 #navbar {
   /* font-family: "ABeeZee", sans-serif; */
   /* background-color:blue; */
