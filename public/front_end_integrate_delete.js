@@ -3,6 +3,7 @@ import { ethers } from "./ethers-5.6.esm.min.js";
 
 const deleteButton = document.getElementById("deleteCertificate");
 const delform = document.getElementById("deleteForm");
+const connectButton = document.getElementById("connectButton");
 
 deleteButton.onclick = async function(){
     // console.log("Hello world");
@@ -19,11 +20,13 @@ deleteButton.onclick = async function(){
 
 }
 
-async function connect(){
+connectButton.onclick = async function connect(){
     if(typeof(window.ethereum)!=="undefined"){
         console.log("Found Metamask")
         await window.ethereum.request({method : "eth_requestAccounts"});
-        connectButton.innerHTML = "Connected";
+        connectButton.innerHTML = `            <span>Connected</span>
+        <img src="../images/delC/fox.png" alt="Fox Image">`
+        ;
     }
     else{
         connectButton.innerHTML = "Plese Install Metamask";
