@@ -74,18 +74,10 @@
         <br />
       </div>
       <div id="text">
-        <h3>HOME</h3>
-        <h3>ABOUT</h3>
-        <h3>
-          VERIFY-CERTIFICATE
-          <select>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
-        </h3>
-
-        <h3>GENERATE QR</h3>
+        <a href="/">HOME</a>
+        <a href="/verify" id="bg">Manual verify</a>
+        <a href="/qr-verify"  id="qr">QR verify</a>
+        <a href="/generate"  id="gen">Generate QR</a>
       </div>
       <div id="profile">
         <img src="/images/genqr/profile.png" id="icon" />
@@ -107,8 +99,9 @@
           name="certificateNumber"
           placeholder="Enter certificate number"
           required
-        /><br />
-        <button type="submit">Generate QR Code</button>
+        /><br>
+        
+      <button type="submit" id="butt">Generate QR </button>
       </form>
     </div>
   </body>
