@@ -15,10 +15,10 @@
         <br />
       </div>
       <div class="text">
-        <h3>HOME</h3>
-        <h3 id="bg">MANUAL VERIFY</h3>
-        <h3>QR VERIFY</h3>
-        <h3>GENERATE QR</h3>
+        <a href="/">HOME</a>
+        <a href="/verify" id="bg">Manual verify</a>
+        <a href="/qr-verify"  id="qr">QR verify</a>
+        <a href="/generate"  id="gen">Generate QR</a>
       </div>
 
       <!-- <button class="button">
@@ -26,12 +26,12 @@
         <img src="/images/manual/fox.png" alt="Fox Image" />
       </button> -->
     </div>
-    <div class="connect-btn">
+    <!-- <div class="connect-btn">
       <button id="connectMetamask">Connect</button>
-    </div>
+    </div> -->
     <button id="button">
       <img src="/images/manual/arrow.png" alt="" />
-      <span>back</span>
+      <a href="javascript:history.back()" style="color: white; text-decoration: none;">back</a>  
     </button>
 
     <div class="main">
@@ -89,7 +89,7 @@
         </div>
       </form>
       <div class="connect-btn">
-        <button id="verifyCertificate">Verify</button>
+        <button id="submit">Verify</button>
       </div>
     </div>
     <img src="/images/manual/Vector.png" id="neeche" />
