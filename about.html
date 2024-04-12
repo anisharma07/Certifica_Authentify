@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Page</title>
+    <style>
+      body {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        margin-left: 0;
+      }
+
+      .bodyContainer {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .navbar {
+        display: flex;
+        color: #656565;
+      }
+
+      .navbarIcons {
+        margin-left: 20px;
+        display: flex;
+        width: 10vw;
+        text-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbarIcons button {
+        border: none;
+        background-color: #fff;
+        font-size: 16px;
+      }
+
+      .navbarIcons button:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+
+      .title {
+        display: flex;
+        gap: 16px;
+        margin-top: 20px;
+        margin-left: 15px;
+      }
+
+      .underline {
+        margin-top: 0;
+        height: 3px;
+        width: 18rem;
+        background-color: #4a67f0;
+        margin-left: 15px;
+      }
+
+      .descriptionContainer {
+        background-color: #d9d9d9;
+        border-radius: 20px;
+        padding: 10px 25px;
+        display: flex;
+        width: 80vw;
+        height: 40vh;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80%;
+      }
+
+      .footerImages {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bodyContainer">
+      <navbar class="navbar">
+        <img
+          src="/images/about/logo.png"
+          width="170rem"
+          alt="Website Logo"
+          style="border-right: 1px solid black"
+        />
+
+        <div class="navbarIcons">
+          <a href="/"><button>HOME</button></a>
+          <button style="color: #5d80ff">ABOUT</button>
+        </div>
+      </navbar>
+      <div class="title">
+        <h1 style="color: #656565">CERTIFICATE</h1>
+        <h1 style="color: #5d80ff">AUTHENTICATE</h1>
+      </div>
+      <div class="underline"></div>
+      <div class="container">
+        <div class="descriptionContainer">
+          <p class="description">
+            Certifica_Authentify aims to create a decentralized system that aims
+            to eradicate the problem of document forging, which involves
+            submitting counterfeit educational and other certificates, by
+            proposing a reliable method to store and authenticate the
+            certificates in real time to minimize the latency in the current
+            authentication system and at the same time facilitating corrections
+            in the certificates without physically reaching out to the concerned
+            organization.This project proposes verifying the certificates using
+            QR codes on the Ethereum blockchain to address certificate
+            verification challenges.Solidity based Smart contracts are fully
+            tested and are utilized to automate and enforce the verification
+            process. Transparent and Immutable nature of blockchain is leveraged
+            to build a fully secure and robust system. It allows authorized
+            users to add, delete and update certificates using their public key
+            which denies the probability of any kind of fraud from the issuer’s
+            side while allowing users to generate and scan qr codes and receive
+            instant verification feedback.
+          </p>
+        </div>
+      </div>
+      <div class="footerImages">
+        <img src="/images/about/Vectorleft.png" alt="footer image" />
+        <img src="/images/about/Vectorright.png" alt="footer image" />
+      </div>
+    </div>
+  </body>
+</html>

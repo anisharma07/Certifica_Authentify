@@ -87,6 +87,10 @@ async function main() {
     res.sendFile(path.join(__dirname, "index.html"));
   });
 
+  app.get("/about", (req, res) => {
+    res.sendFile(path.join(__dirname, "about.html"));
+  });
+
   app.post("/signup", async (req, res) => {
     let User;
     const unique_check = await newUser
