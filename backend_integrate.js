@@ -11,7 +11,7 @@ const { certSchema, userSchema } = require("./schema");
 
 const app = express();
 const PORT = process.env.PORT;
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URL;
 const Secret = process.env.SECRET_KEY;
 
 app.use(bodyParser.urlencoded({ extended: true }));
