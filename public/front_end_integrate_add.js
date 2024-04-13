@@ -8,11 +8,12 @@ const form = document.getElementById("myForm");
 const delform = document.getElementById("deleteForm");
 const loadingCircle = document.querySelector(".loader-container");
 
-loadingCircle.onclick = closeLoading;
-function closeLoading() {
-  loadingCircle.style.display = "none";
-  submitButton.style.display = "block";
-}
+// loadingCircle.onclick = closeLoading;
+// function closeLoading() {
+//   loadingCircle.style.display = "none";
+//   submitButton.style.display = "block";
+// }
+
 // const test_certno = 4;
 // const testHash = '0x6f54d8ec7a61bdaf30d77aaeffd0b6532c908f0e41c1cf35b8151fed6e161bc9';
 
@@ -45,8 +46,8 @@ function hash(message) {
 }
 
 submitButton.onclick = async function () {
-  loadingCircle.style.display = "block";
-  submitButton.style.display = "none";
+  // loadingCircle.style.display = "block";
+  // submitButton.style.display = "none";
   const formData = new FormData(form);
   const formDataObject = Object.fromEntries(formData.entries());
   // console.log("Data is here....");
@@ -83,14 +84,15 @@ async function connect() {
     console.log("Found Metamask");
     await window.ethereum.request({ method: "eth_requestAccounts" });
     connectButton.innerHTML = "Connected";
+    connectButton.style.backgroundColor = "#00b51d";
   } else {
     connectButton.innerHTML = "Plese Install Metamask";
   }
 }
 
 function listenForTransactionMine(transactionResponse, provider) {
-  //   loadingCircle.style.display = "block";
-  //   submitButton.style.display = "none";
+  loadingCircle.style.display = "block";
+  submitButton.style.display = "none";
   console.log(`Mining ${transactionResponse.hash}...`);
   return new Promise((resolve, reject) => {
     provider.once(transactionResponse.hash, (transactionReceipt) => {

@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
 
 .navbar-links-css {
-  color: #656565;
-  font-size: 16px;
+  color: #232323;
+  font-size: 18px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
 }
 #active-navbar-link {
-  color: #5d80ff;
+  color: #0037ff;
 }
 #active-navbar-link:hover {
-  color: #1044ff;
+  color: #437eff;
 }
 #navbar-image-logo {
   width: 300px;
@@ -21,28 +21,7 @@
   align-items: center;
   font-family: "Poppins", sans-serif;
 }
-.navbar-btn-connect {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #00b51d;
-  border-radius: 35px;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-}
 
-.navbar-btn-connect img {
-  width: 25px;
-  height: 25px;
-  margin: 0px 10px 0px 20px;
-}
-
-.navbar-btn-connect span {
-  font-size: x-large;
-  color: white;
-  margin-left: 10px;
-}
 .loader-container {
   height: 100px;
   width: 100%;
