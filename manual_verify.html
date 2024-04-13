@@ -5,33 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Certificate Form</title>
     <link rel="stylesheet" href="/css/manual-verify.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <style>
+      .navbar {
+        display: flex;
+        color: #656565;
+        width: 50vw;
+        justify-content: start;
+        margin-top: 4px;
+        margin-bottom: 4rem;
+      }
+
+      .navbarIcons {
+        margin-left: 20px;
+        display: flex;
+        width: 50vw;
+        text-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbarIcons button {
+        border: none;
+        background-color: #ffffff;
+        font-size: 16px;
+        color: #656565;
+      }
+
+      .navbarIcons button:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <div class="nav">
-      <div id="img">
-        <img src="/images/manual/logo.png" alt="" />
-      </div>
-      <div id="line">
-        <br />
-      </div>
-      <div class="text">
-        <a href="/">HOME</a>
-        <a href="/verify" id="bg">Manual verify</a>
-        <a href="/qr-verify"  id="qr">QR verify</a>
-        <a href="/generate"  id="gen">Generate QR</a>
-      </div>
+    <navbar class="navbar">
+      <img
+        src="/images/home/logo.png"
+        width="170rem"
+        alt="Website Logo"
+        style="border-right: 1px solid black"
+      />
 
-      <!-- <button class="button">
-        <span>Connect wallet</span>
-        <img src="/images/manual/fox.png" alt="Fox Image" />
-      </button> -->
-    </div>
+      <div class="navbarIcons">
+        <a href="/"><button>HOME</button></a>
+        <a href="/verify"
+          ><button style="color: #5d80ff">MANUAL VERIFY</button></a
+        >
+        <a href="/qr-verify"><button>QR VERIFY</button></a>
+        <a href="/generate"><button>GENERATE QR</button></a>
+      </div>
+    </navbar>
     <!-- <div class="connect-btn">
       <button id="connectMetamask">Connect</button>
     </div> -->
-    <button id="button">
+    <button id="button" class="back-gradient">
       <img src="/images/manual/arrow.png" alt="" />
-      <a href="javascript:history.back()" style="color: white; text-decoration: none;">back</a>  
+      <a
+        href="javascript:history.back()"
+        style="color: white; text-decoration: none"
+        >back</a
+      >
     </button>
 
     <div class="main">

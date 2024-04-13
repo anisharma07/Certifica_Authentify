@@ -7,52 +7,99 @@
     <link rel="stylesheet" href="/css/addnew.css" />
     <link rel="stylesheet" href="/css/global.css" />
     <style>
-            .connect-btn button {
-                   background-color: #007bff;
-                   color: white;
-                   padding: 10px 20px;
-                   border: none;
-                   border-radius: 5px;
-                   cursor: pointer;
-                   margin-top: 50px;
-            }
-            #connectMetamask{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-            }
+      /* copyright-rudransh */
+      .certificate-authentica-logo {
+        width: 300px;
+        height: auto;
+        margin-left: 50px;
+        border-right: 1px solid rgb(18, 18, 18);
+      }
+      .connect-btn button {
+        background-color: #007bff;
+        color: white;
+        padding: 5px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 5px;
+        align-items: center;
+      }
+
+      .navbar {
+        display: flex;
+        color: #656565;
+        width: 100vw;
+        justify-content: start;
+        margin-bottom: 6rem;
+      }
+
+      .navbarIcons {
+        margin-left: 20px;
+        display: flex;
+        width: 50vw;
+        text-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbarIcons button {
+        border: none;
+        background-color: #ffffff;
+        font-size: 16px;
+        color: #656565;
+      }
+
+      .navbarIcons button:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+
+      .profile {
+        margin-left: auto;
+        margin-right: 2.5rem;
+      }
+
+      .connectMetaMaskButton {
+        display: flex;
+        gap: 1rem;
+        font-size: medium;
+      }
+      .main {
+        background-color: white;
+      }
+      /* copyright-ended */
     </style>
   </head>
   <body>
-    <div class="nav">
-      <div id="img">
-        <img src="/images/add/logo.png" alt="" />
-      </div>
-      <div id="line">
-        <br />
-      </div>
-      <div class="text">
-        <a href="/" class="navbar-links-css">HOME</a>
-        <a href="/verify" class="navbar-links-css">MANUAL VERIFY</a>
-        <a href="/qr-verify" class="navbar-links-css">QR VERIFY</a>
-        <a href="/generate" class="navbar-links-css">GENERATE QR</a>
-        <a href="/add" id="active-navbar-link" class="navbar-links-css"
-          >CERTIFICATES</a
-        >
+    <navbar class="navbar">
+      <img
+        src="/images/home/logo.png"
+        width="170rem"
+        alt="Website Logo"
+        style="border-right: 1px solid black"
+      />
+
+      <div class="navbarIcons">
+        <a href="/"><button>HOME</button></a>
+        <a href="/about"><button>ABOUT</button></a>
+        <a href="/verify"><button>MANUAL VERIFY</button></a>
+        <a href="/qr-verify"><button>QR VERIFY</button></a>
+        <a href="/generate"><button>GENERATE QR</button></a>
       </div>
 
-      <div class="connect-btn">
-        <button id="connectMetamask">
-          Connect <img src="/images/add/fox.png" alt="Fox Image" />
+      <div class="connect-btn profile">
+        <button id="connectMetamask" class="connectMetaMaskButton">
+          <p>Connect</p>
+          <img src="/images/add/fox.png" alt="Fox Image" />
         </button>
       </div>
-    </div>
+    </navbar>
 
     <button id="button" class="back-gradient">
       <img src="/images/add/arrow.png" alt="" />
       <a
         href="javascript:history.back()"
-        style="color: white; text-decoration: none;"
+        style="color: white; text-decoration: none"
         >back</a
       >
     </button>

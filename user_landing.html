@@ -5,41 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Certificate Management</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+
     <style>
-      body{
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        background-color: #F7F7F7;
+      .centering-container {
+        margin: 0 auto;
       }
-      .home-card{
-        background-color: white;
-        border-radius: 36px;
+      .centering-container {
+        margin: 0 auto;
+      }
+
+      .navbar {
+        display: flex;
+        color: #656565;
+        width: 100vw;
+        justify-content: start;
+        margin-bottom: 6rem;
+      }
+
+      .navbarIcons {
+        margin-left: 20px;
+        display: flex;
+        width: 50vw;
+        text-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbarIcons button {
+        border: none;
+        /* background-color: #f7f7f7; */
+        font-size: 16px;
+        color: #656565;
+      }
+
+      .navbarIcons button:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+
+      .profile {
+        margin-left: auto;
+        margin-right: 2.5rem;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <div id="nav">
-      <div id="img">
-        <img src="/images/home/logo.png" alt=""/>
-      </div>
-      <div id="line"> <br></div>
-      <div id="text">
-        <a href="/">HOME</a>
-        <a href="/about">ABOUT</a>
-        <a href="/verify" id="bg">Manual verify</a>
-        <a href="/qr-verify"  id="qr">QR verify</a>
-        <a href="/generate"  id="gen">Generate QR</a>
-      </div>
-      <div id="profile">
-        <img src="/images/home/profile.png" id="icon" />
-        <h3>PROFILE</h3>
-      </div>
+    <div>
+      <navbar class="navbar">
+        <img
+          src="/images/home/logo.png"
+          width="170rem"
+          alt="Website Logo"
+          style="border-right: 1px solid black"
+        />
+
+        <div class="navbarIcons">
+          <a href="/"><button style="color: #5d80ff">HOME</button></a>
+          <a href="/about"><button>ABOUT</button></a>
+          <a href="/verify"><button>MANUAL VERIFY</button></a>
+          <a href="/qr-verify"><button>QR VERIFY</button></a>
+          <a href="/generate"><button>GENERATE QR</button></a>
+        </div>
+
+        <div class="profile">
+          <div style="display: flex">
+            <img src="/images/home/profile.png" id="icon" />
+            <h3>PROFILE</h3>
+          </div>
+        </div>
+      </navbar>
     </div>
     <div id="m">
       <h2>Hello User,select your services :</h2>
     </div>
-    <div id="line2"> <br></div>
+    <div id="line2"><br /></div>
 
     <div id="box">
       <div class="home-card">
@@ -50,7 +91,7 @@
       <div class="home-card">
         <img src="/images/home/tick.png" class="QR" />
         <p>
-          Manual Verification Using <br>
+          Manual Verification Using <br />
           Certificate Details
         </p>
         <a href="/verify" class="button" class="QR">Verify</a>
@@ -58,7 +99,7 @@
       <div class="home-card">
         <img src="/images/home/scan.png" id="scan" />
         <p>
-          Certificate Verification <br>
+          Certificate Verification <br />
           Using Qr code scan
         </p>
         <a href="/qr-verify" class="button" id="qr">Verify</a>
