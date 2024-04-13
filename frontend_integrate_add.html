@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Certificate Form</title>
     <link rel="stylesheet" href="/css/addnew.css" />
+    <link rel="stylesheet" href="/css/global.css" />
     <style>
-      .connect-btn button {
-             background-color: #007bff;
-             color: white;
-             padding: 10px 20px;
-             border: none;
-             border-radius: 5px;
-             cursor: pointer;
-             margin-top: 50px;
-      }
+            .connect-btn button {
+                   background-color: #007bff;
+                   color: white;
+                   padding: 10px 20px;
+                   border: none;
+                   border-radius: 5px;
+                   cursor: pointer;
+                   margin-top: 50px;
+            }
+            #connectMetamask{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+            }
     </style>
   </head>
   <body>
@@ -26,11 +32,13 @@
         <br />
       </div>
       <div class="text">
-        <a href="/">HOME</a>
-        <a href="/about">ABOUT</a>
-        <a href="/generate" id="gen">Generate QR</a>
-        <a href="/verify" id="man">Manual Verification</a>
-        <a href="/qr-verify" id="qr">QR Code Verification</a>
+        <a href="/" class="navbar-links-css">HOME</a>
+        <a href="/verify" class="navbar-links-css">MANUAL VERIFY</a>
+        <a href="/qr-verify" class="navbar-links-css">QR VERIFY</a>
+        <a href="/generate" class="navbar-links-css">GENERATE QR</a>
+        <a href="/add" id="active-navbar-link" class="navbar-links-css"
+          >CERTIFICATES</a
+        >
       </div>
 
       <div class="connect-btn">
@@ -40,9 +48,13 @@
       </div>
     </div>
 
-    <button id="button">
+    <button id="button" class="back-gradient">
       <img src="/images/add/arrow.png" alt="" />
-      <span>back</span>
+      <a
+        href="javascript:history.back()"
+        style="color: white; text-decoration: none;"
+        >back</a
+      >
     </button>
 
     <div class="main">
@@ -58,6 +70,7 @@
               required
             />
             <input
+              autocomplete="off"
               type="text"
               id="certificateNumber"
               placeholder="Certificate Number"
@@ -65,6 +78,7 @@
               required
             />
             <input
+              autocomplete="off"
               type="text"
               id="name"
               name="name"
@@ -72,6 +86,7 @@
               required
             />
             <input
+              autocomplete="off"
               type="text"
               id="fatherName"
               name="fatherName"
@@ -79,6 +94,7 @@
               required
             />
             <input
+              autocomplete="off"
               type="text"
               id="rollNumber"
               name="rollNumber"
@@ -86,6 +102,7 @@
               required
             />
             <input
+              autocomplete="off"
               type="text"
               id="schoolCode"
               name="schoolCode"
@@ -93,6 +110,7 @@
               required
             />
             <input
+              autocomplete="off"
               type="number"
               id="percentage"
               name="percentage"
@@ -105,6 +123,10 @@
           </form>
           <div class="connect-btn">
             <button id="addCertificate">Add Certificate</button>
+            <div class="loader-container">
+              <div class="loading-circle-add-delete"></div>
+              <p>Adding Certificate...</p>
+            </div>
           </div>
         </div>
       </div>

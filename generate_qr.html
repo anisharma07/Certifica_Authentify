@@ -74,10 +74,10 @@
         <br />
       </div>
       <div id="text">
-        <a href="/">HOME</a>
+        <a href="javascript:history.back()">HOME</a>
         <a href="/verify" id="bg">Manual verify</a>
-        <a href="/qr-verify"  id="qr">QR verify</a>
-        <a href="/generate"  id="gen">Generate QR</a>
+        <a href="/qr-verify" id="qr">QR verify</a>
+        <a href="/generate" id="gen">Generate QR</a>
       </div>
       <div id="profile">
         <img src="/images/genqr/profile.png" id="icon" />
@@ -93,15 +93,14 @@
       <form id="qr-form" action="/generate" method="post">
         <!-- <label for="number"></label><br> -->
         <input
-          input
           type="text"
           id="certificateNumber"
           name="certificateNumber"
           placeholder="Enter certificate number"
           required
-        /><br>
-        
-      <button type="submit" id="butt">Generate QR </button>
+        /><br />
+
+        <button type="submit" id="butt">Generate QR</button>
       </form>
     </div>
   </body>

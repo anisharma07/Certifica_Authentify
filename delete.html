@@ -1,114 +1,160 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete Certificate</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        #deleteCertificate {
-            background-color: #ff0000;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #deleteCertificate:hover {
-            background-color: #cc0000;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>Delete Certificate</h2>
-        <form id="deleteForm" action="/deleted" method="post">
-            <label for="certificateNumber">Certificate Number:</label>
-            <input type="text" id="certificateNumber" name="certificateNumber" required>
-
-        </form>
-        <button id="deleteCertificate">Delete Certificate</button>
-    </div>
-    <script src="./front_end_integrate_delete.js" type="module"></script>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>certificate authentication</title>
-    <link rel="stylesheet" href="/css/styleD.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="/css/styleD.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <style>
+
+      /* .delete-again{
+          position: fixed;
+          bottom: 10px;
+          right: 10px;
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- <p class="delete-again hidden">try again?</p> -->
     <div class="nav">
-        <div id="img">
-            <img src="/images/delC/logo.png" alt="">
-        </div>
-        <div id="line">
-            <br>
-        </div>
-        <div class="text">
-            <h3>HOME</h3>
-            <h3>MANUAL VERIFY</h3>
-            <h3>QR VERIFY</h3> 
-            <h3>GENERATE QR</h3>
-            <h3 id="bg">CERTIFICATES</h3>
-        </div>
-        
-        <button class="button" id="connectButton">
-            <span>Connect</span>
-            <img src="/images/delC/fox.png" alt="Fox Image">
-        </button>
-        
+      <img id="navbar-image-logo" src="/images/delC/logo.png" alt="" />
+
+      <div id="line">
+        <br />
+      </div>
+      <div class="text">
+        <a href="/" class="navbar-links-css">HOME</a>
+        <a href="/verify" class="navbar-links-css">MANUAL VERIFY</a>
+        <a href="/qr-verify" class="navbar-links-css">QR VERIFY</a>
+        <a href="/generate" class="navbar-links-css">GENERATE QR</a>
+        <a href="/add" id="active-navbar-link" class="navbar-links-css"
+          >CERTIFICATES</a
+        >
+      </div>
+
+      <button class="navbar-btn-connect" id="connectButton">
+        <span>Connect</span>
+        <img src="/images/delC/fox.png" alt="Fox Image" />
+      </button>
     </div>
 
     <button id="button">
-        <img src="/images/delC/arrow.png" alt="">
-        <span>back</span>
+      <img src="/images/delC/arrow.png" alt="" />
+      <a
+        href="javascript:history.back()"
+        style="color: white; text-decoration: none;"
+        >back</a
+      >
     </button>
 
     <div class="main">
-        <h1>DELETE CERTIFICATE</h1>
-        <form id="deleteForm" action="/deleted" method="post">
-            <label for="certificateNumber">CERTIFICATE NUMBER:</label> <br>
-            <input type="text" name="certificateNumber" id="certificateNumber"><br><br><br>
-        </form>
-        <button id="deleteCertificate">DELETE CERTIFICATE</button>
-        <div id="warning">
-        <img src="/images/delC/warning.png" alt="">
+      <h1>DELETE CERTIFICATE</h1>
+      <form id="deleteForm" action="/deleted" method="post">
+        <label for="certificateNumber">CERTIFICATE NUMBER:</label> <br />
+        <input type="text" name="certificateNumber" id="certificateNumber" />
+      </form>
+      <button id="deleteCertificate" class="">DELETE CERTIFICATE</button>
+      <div class="loader-container">
+        <div class="loading-circle-add-delete"></div>
+        <p>deletion in progress...</p>
+      </div>
+      <div id="warning">
+        <img src="/images/delC/warning.png" alt="" />
         <p>Warning! A Certificate once deleted will not be recovered again</p>
-        </div>
+      </div>
     </div>
 
-    <img src="/images/delC/Vector3.png" id="neeche3">
+    <img src="/images/delC/Vector3.png" id="neeche3" />
     <script src="./front_end_integrate_delete.js" type="module"></script>
-</body>
+  </body>
 </html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>certificate authentication</title>
+    <link rel="stylesheet" href="/css/styleD.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <style>
+        .loader-container {
+           height: 100px;
+           width: 100%;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           justify-items: center;
+           display: none;
+        }
+        .nav-qr{
+            font-size: 18px;
+          text-decoration: none;
+          color: #656565;
+      font-weight: 400;
+        }
+        #certificate-tab{
+          color: #5D80FF;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div>
+        <img
+          src="/images/delC/logo.png"
+          alt=""
+          class="certificate-authentica-logo"
+        />
+      </div>
+      <div class="text">
+        <a href="/" class="nav-qr">HOME</a>
+        <a href="/verify" class="nav-qr">MANUAL VERIFY</a>
+        <a href="/qr-verify" class="nav-qr">QR VERIFY</a>
+        <a href="/generate" class="nav-qr">GENERATE QR</a>
+        <a href="/add" class="nav-qr" id="certificate-tab">CERTIFICATES</a>
+      </div>
+
+      <button class="button" id="connect-button">
+  <img src="/images/delC/fox.png" alt="Fox Image" />
+      </button>
+    </div>
+
+    <button id="button" class="back-btn-gradient">
+      <img src="/images/delC/arrow.png" alt="" />
+      <a
+        href="javascript:history.back()"
+        style="color: white; text-decoration: none;"
+        >back</a
+      >
+    </button>
+
+    <div class="main">
+      <h1>DELETE CERTIFICATE</h1>
+      <form action="">
+        <label for="cnumber">CERTIFICATE NUMBER:</label> <br />
+        <input
+          type="text"
+          id="certificateNumber"
+          name="certificateNumber"
+          required
+        />
+      </form>
+      <button id="deleteCertificate" class="hidden">DELETE CERTIFICATE</button>
+      <div class="loader-container">
+        <div class="loader"></div>
+        <p>deletion in progress...</p>
+      </div>
+      <div id="warning">
+        <img src="/images/delC/warning.png" alt="" />
+        <p>Warning! A Certificate once deleted will not be recovered again</p>
+      </div>
+    </div>
+
+    <img src="/images/delC/Vector3.png" id="neeche3" />
+    <script src="./front_end_integrate_delete.js" type="module"></script>
+  </body>
+</html> -->
