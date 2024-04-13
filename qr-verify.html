@@ -6,63 +6,142 @@
     <title>QR Code Verification</title>
     <style>
       body {
-          font-family: Arial, sans-serif;
-          margin: 0;
-          padding: 0;
-          background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
       }
       .container {
-          max-width: 500px;
-          margin: 50px auto;
-          padding: 20px;
-          background-color: #fff;
-          border-radius: 10px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 0px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
       h1 {
-          text-align: center;
-          color: #007bff;
+        text-align: center;
+        color: #007bff;
       }
       .section {
-          background-color: #ffffff;
-          padding: 30px;
-          border: 1.5px solid #b2b2b2;
-          border-radius: 0.25em;
-          box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
-          margin-bottom: 20px;
+        background-color: #ffffff;
+        padding: 30px;
+        border: 1.5px solid #b2b2b2;
+        border-radius: 0.25em;
+        box-shadow: 0 20px 25px rgba(0, 0, 0, 0.25);
+        margin-bottom: 20px;
       }
       #my-qr-reader {
-          padding: 20px;
-          border: 1.5px solid #b2b2b2;
-          border-radius: 8px;
-          text-align: center;
+        padding: 20px;
+        border: 1.5px solid #b2b2b2;
+        border-radius: 8px;
+        text-align: center;
       }
       #certificateNumber {
-          width: calc(100% - 22px);
-          padding: 10px;
-          font-size: 16px;
-          border-radius: 5px;
-          border: 1px solid #ccc;
+        width: calc(100% - 22px);
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
       }
       #qr-verify {
-          width: 100%;
-          padding: 10px;
-          font-size: 16px;
-          background-color: #007bff;
-          color: #fff;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
       }
       #qr-verify:hover {
-          background-color: #0056b3;
+        background-color: #0056b3;
       }
       .form-group {
-          display: none;
+        display: none;
       }
+      /* copyright-rudransh */
+      .certificate-authentica-logo {
+        width: 300px;
+        height: auto;
+        margin-left: 50px;
+        border-right: 1px solid rgb(18, 18, 18);
+      }
+      .connect-btn button {
+        background-color: #007bff;
+        color: white;
+        padding: 5px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 5px;
+        align-items: center;
+      }
+
+      .navbar {
+        display: flex;
+        color: #656565;
+        width: 100%;
+        justify-content: start;
+        margin-bottom: 10px;
+      }
+
+      .navbarIcons {
+        margin-left: 20px;
+        display: flex;
+        width: 50vw;
+        text-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbarIcons button {
+        border: none;
+        /* background-color: #ffffff; */
+        font-size: 16px;
+        color: #656565;
+        font-weight: 500;
+      }
+
+      .navbarIcons button:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+
+      .profile {
+        margin-left: auto;
+        margin-right: 2.5rem;
+      }
+
+      .connectMetaMaskButton {
+        display: flex;
+        gap: 1rem;
+        font-size: medium;
+      }
+      .main {
+        background-color: white;
+      }
+      /* copyright-ended */
     </style>
   </head>
   <body>
+    <navbar class="navbar">
+      <img
+        src="/images/home/logo.png"
+        width="170rem"
+        alt="Website Logo"
+        style="border-right: 1px solid black"
+      />
+
+      <div class="navbarIcons">
+        <a href="/"><button>HOME</button></a>
+        <a href="/verify"><button>MANUAL VERIFY</button></a>
+        <a href="/qr-verify"
+          ><button style="color: #5d80ff">QR VERIFY</button></a
+        >
+        <a href="/generate"><button>GENERATE QR</button></a>
+      </div>
+    </navbar>
     <div class="container">
       <h1>Scan QR Codes</h1>
       <div class="section">

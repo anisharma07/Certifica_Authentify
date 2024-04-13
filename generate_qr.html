@@ -64,26 +64,56 @@
           }
       }
     </style> -->
+    <style>
+      .navbar {
+        display: flex;
+        color: #656565;
+        width: 50vw;
+        justify-content: start;
+        margin-top: 4px;
+        margin-bottom: 4rem;
+      }
+
+      .navbarIcons {
+        margin-left: 20px;
+        display: flex;
+        width: 50vw;
+        text-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbarIcons button {
+        border: none;
+        background-color: #ffffff;
+        font-size: 16px;
+        color: #656565;
+      }
+
+      .navbarIcons button:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <div class="nav">
-      <div id="img">
-        <img src="/images/genqr/logo.png" alt="" />
+    <navbar class="navbar">
+      <img
+        src="/images/home/logo.png"
+        width="170rem"
+        alt="Website Logo"
+        style="border-right: 1px solid black"
+      />
+
+      <div class="navbarIcons">
+        <a href="/"><button>HOME</button></a>
+        <a href="/verify"><button>MANUAL VERIFY</button></a>
+        <a href="/qr-verify"><button>QR VERIFY</button></a>
+        <a href="/generate"
+          ><button style="color: #5d80ff">GENERATE QR</button></a
+        >
       </div>
-      <div id="line">
-        <br />
-      </div>
-      <div id="text">
-        <a href="javascript:history.back()">HOME</a>
-        <a href="/verify" id="bg">Manual verify</a>
-        <a href="/qr-verify" id="qr">QR verify</a>
-        <a href="/generate" id="gen">Generate QR</a>
-      </div>
-      <div id="profile">
-        <img src="/images/genqr/profile.png" id="icon" />
-        <h3>PROFILE</h3>
-      </div>
-    </div>
+    </navbar>
     <div class="main">
       <img src="/images/genqr/qr.png" alt="" />
       <p>
