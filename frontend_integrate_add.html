@@ -17,7 +17,8 @@
       .connect-btn button {
         background-color: #007bff;
         color: white;
-        padding: 5px 20px;
+        padding: 10px 20px;
+        padding-right: 40px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -57,15 +58,23 @@
       .profile {
         margin-left: auto;
         margin-right: 2.5rem;
+        position: relative;
       }
 
       .connectMetaMaskButton {
         display: flex;
         gap: 1rem;
         font-size: medium;
+        padding: 10px;
       }
       .main {
         background-color: white;
+      }
+      #meta-fox-img{
+        position: absolute;
+        top: 13px;
+        right: 10px;
+        width: 20px;
       }
       /* copyright-ended */
     </style>
@@ -87,11 +96,11 @@
         <a href="/generate"><button>GENERATE QR</button></a>
       </div>
 
-      <div class="connect-btn profile">
+      <div class="connect-btn profile" id="connect-btn">
         <button id="connectMetamask" class="connectMetaMaskButton">
-          <p>Connect</p>
-          <img src="/images/add/fox.png" alt="Fox Image" />
+          Connect
         </button>
+        <img src="/images/add/fox.png" alt="Fox Image" id="meta-fox-img" />
       </div>
     </navbar>
 
@@ -180,17 +189,6 @@
     </div>
 
     <img src="/images/add/Vector.png" id="neeche" />
-    <!-- <div class="connect-btn" >
-        <button id="connectMetamask">Connect</button>
-    </div>
-    <div class="container">
-        <form id="myForm" action="/add" method="post">
-            
-        </form>
-        <div class="connect-btn" >
-            <button id="addCertificate">Submit</button>
-        </div>
-    </div> -->
   </body>
   <script src="./front_end_integrate_add.js" type="module"></script>
 </html>

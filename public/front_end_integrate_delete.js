@@ -5,19 +5,18 @@ const deleteButton = document.getElementById("deleteCertificate");
 const delform = document.getElementById("deleteForm");
 const connectButton = document.getElementById("connectButton");
 const loadingCircle = document.querySelector(".loader-container");
-loadingCircle.onclick = closeLoading;
-function closeLoading() {
-  loadingCircle.style.display = "none";
-  deleteButton.style.display = "block";
-}
+// loadingCircle.onclick = closeLoading;
+// function closeLoading() {
+//   loadingCircle.style.display = "none";
+//   deleteButton.style.display = "block";
+// }
 
 deleteButton.onclick = async function () {
   // console.log("Hello world");
   const delForm = new FormData(delform);
   const delFormObject = Object.fromEntries(delForm.entries());
   const cert_no = delFormObject.certificateNumber;
-  loadingCircle.style.display = "block";
-  deleteButton.style.display = "none";
+
   await deleteCertificate(cert_no)
     .then((resolvedValue) => {
       delform.submit();
@@ -33,6 +32,7 @@ connectButton.onclick = async function connect() {
     await window.ethereum.request({ method: "eth_requestAccounts" });
     connectButton.innerHTML = `            <span>Connected</span>
         <img src="../images/delC/fox.png" alt="Fox Image">`;
+    connectButton.style.backgroundColor = "#00b51d";
   } else {
     connectButton.innerHTML = "Plese Install Metamask";
   }
@@ -40,6 +40,8 @@ connectButton.onclick = async function connect() {
 
 function listenForTransactionMine(transactionResponse, provider) {
   console.log(`Mining ${transactionResponse.hash}...`);
+  loadingCircle.style.display = "block";
+  deleteButton.style.display = "none";
   return new Promise((resolve, reject) => {
     provider.once(transactionResponse.hash, (transactionReceipt) => {
       console.log(
