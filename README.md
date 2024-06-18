@@ -1,7 +1,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://res.cloudinary.com/dwwajleyo/image/upload/v1711745709/posters_and_assets/typedash_idsujz.png" alt="Logo" width="80">
+    <img src="/public/images/landing/logo.png" alt="Logo" width="200">
   </a>
 
   <h3 align="center">Certifica Authentify</h3>
